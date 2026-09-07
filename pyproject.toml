@@ -1,0 +1,26 @@
+[project]
+name = "lingbot-map"
+version = "0.1.0"
+description = "LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction"
+requires-python = ">= 3.10"
+dependencies = [
+    "Pillow",
+    "huggingface_hub",
+    "einops",
+    "safetensors",
+    "opencv-python",
+    "tqdm",
+    "scipy"
+]
+
+[project.optional-dependencies]
+vis = ["viser>=0.2.23", "trimesh", "matplotlib", "onnxruntime", "requests"]
+demo = ["lingbot-map[vis]"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lingbot_map*"]

@@ -1,0 +1,31 @@
+# SURE-Map uncertainty-guided point filtering on 7-Scenes.
+workspace: outputs/seven_scenes
+
+datasets:
+  - seven_scenes
+
+methods:
+  - sure_map
+
+point_filtering:
+  dataset: seven_scenes
+  method: sure_map
+  variants:
+    - raw
+    - unc_filter
+  # Percentage of the highest-uncertainty candidate points filtered.
+  uncertainty_filter_percent: 10.0
+  voxel_size: 0.0078125
+  icp_threshold: 0.1
+
+evaluation:
+  traj:
+    enable: false
+  auc:
+    enable: false
+  depth:
+    enable: false
+  points:
+    enable: true
+    vis: false
+    icp_threshold: 0.1

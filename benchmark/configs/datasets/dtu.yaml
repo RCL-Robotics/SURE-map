@@ -1,0 +1,12 @@
+dataset: dtu
+raw_data_root: /path/to/dtu_test_mvsnet_release
+use_mask: true
+erode_mask: true
+sampling:
+  strategy: sequence
+  stride: 1
+evaluation:
+  points:
+    icp_threshold: 0.1
+    voxel_size: 0.0078125
+    thresholds: [0.05]

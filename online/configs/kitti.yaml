@@ -1,0 +1,38 @@
+# End-to-end SURE-Map pose estimation on KITTI.
+# Camera intrinsics are always predicted by the streaming backbone.
+
+dataset:
+  name: kitti
+  root: /path/to/KITTI/dataset
+  sequences: all
+
+output_dir: online/outputs/kitti
+
+checkpoints:
+  backbone: checkpoints/lingbot.pt
+  uncertainty: checkpoints/uncertainty.pt
+
+inference:
+  mode: strict_streaming
+  attention: flash
+  aggregator: BF16
+  device: cuda
+  input_size: [504, 280]
+  initial_window: 8
+
+keyframes:
+  regular_interval: 5
+  flow_threshold: 75.0
+  geometric_overlap_threshold: 0.7
+
+scale_calibration:
+  window_size: 20
+  period: 10
+  # User-tunable scale-correction strength; larger values follow scale cues more strongly.
+  damping: 0.8
+
+local_correction:
+  # User-tunable: enable uncertainty-aware Hessian validation in settings with frequent local geometric degeneracy, such as autonomous-driving scenarios.
+  use_hessian_validation: true
+  gn_iterations: 3
+  wrmse_threshold: 1.0

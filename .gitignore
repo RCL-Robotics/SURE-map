@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.so
+.eggs/
+demo_render/
+CLAUDE.md
+.claude/
+.agents/
+skyseg.onnx
+.claude-remote
+weights/
+.DS_Store
+**/.DS_Store
+docs/
+
+# Downloaded backbone weights and generated evaluation outputs.
+checkpoints/lingbot.pt
+online/outputs/
+benchmark/outputs/
