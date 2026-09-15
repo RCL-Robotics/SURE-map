@@ -22,10 +22,6 @@
 
 [2026-09-14] Paper uploaded to [arXiv](https://arxiv.org/abs/2609.15795).
 
-<p align="center">
-  <img src="assets/teaser.webp" alt="SURE-Map teaser" width="100%">
-</p>
-
 ## 🔥 Highlight
 
 SURE-Map equips streaming geometric foundation models with two complementary self-correction mechanisms:
