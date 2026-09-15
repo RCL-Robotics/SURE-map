@@ -1,4 +1,32 @@
-# SURE-Map: Self-Correcting Streaming Geometric Foundation Models
+<p align="center">
+  <h1 align="center"><strong>SURE-Map: Self-Correcting Streaming Geometric Foundation Models</strong></h1>
+  <p align="center">
+    <a href="https://github.com/milchstrasse565">Mingkai Liu</a><sup>1,2</sup>, Hao Zhao<sup>3,*</sup>, <a href="https://xingxingzuo.github.io/">Xingxing Zuo</a><sup>1,*</sup>
+    <br>
+    <sup>1</sup>Mohamed bin Zayed University of Artificial Intelligence (MBZUAI), <sup>2</sup>Peking University, <sup>3</sup>Tsinghua University
+    <br>
+    <sup>*</sup>Corresponding authors
+    <br>
+  </p>
+</p>
+
+<div id="top" align="center">
+
+[![arXiv](https://img.shields.io/badge/arXiv-2609.15795-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2609.15795)
+[![Homepage](https://img.shields.io/badge/Homepage-%F0%9F%8C%90-blue)](https://mingkai-liu.github.io/projects/sure-map/)
+[![Video](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://www.youtube.com/watch?v=vIKJFzLCtMc)
+
+</div>
+
+## Updates
+
+[2026-09-14] Paper uploaded to [arXiv](https://arxiv.org/abs/2609.15795).
+
+<p align="center">
+  <img src="assets/teaser.webp" alt="SURE-Map teaser" width="100%">
+</p>
+
+## 🔥 Highlight
 
 SURE-Map equips streaming geometric foundation models with two complementary self-correction mechanisms:
 
@@ -284,6 +312,20 @@ summary.json
 ```
 
 **Paper results:** Table II, **SURE-Map** row (without LC): mean ATE-RMSE **28.58 m** after Sim(3) alignment. The corresponding output is `mean_ate_rmse_m` in `summary.json`; lower is better.
+
+## Citation
+
+```bibtex
+@misc{liu2026suremapselfcorrectingstreaminggeometric,
+  title         = {SURE-Map: Self-Correcting Streaming Geometric Foundation Model},
+  author        = {Mingkai Liu and Hao Zhao and Xingxing Zuo},
+  year          = {2026},
+  eprint        = {2609.15795},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2609.15795}
+}
+```
 
 ## License
 
