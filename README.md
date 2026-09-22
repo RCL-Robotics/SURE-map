@@ -15,6 +15,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2609.15795-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2609.15795)
 [![Homepage](https://img.shields.io/badge/Homepage-%F0%9F%8C%90-blue)](https://mingkai-liu.github.io/projects/sure-map/)
 [![Video](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://www.youtube.com/watch?v=vIKJFzLCtMc)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Model-yellow)](https://huggingface.co/milchstrasse/SURE-Map)
 
 </div>
 
@@ -36,7 +37,7 @@ Together, they improve dense geometry and long-horizon trajectory accuracy while
 **1. Clone SURE-Map and create the conda environment**
 
 ```bash
-git clone https://github.com/milchstrasse565/SURE-map.git SURE-Map
+git clone https://github.com/RCL-Robotics/SURE-map.git SURE-Map
 cd SURE-Map
 
 conda create -n SURE-Map python=3.10 -y
@@ -68,13 +69,15 @@ pip install --index-url https://pypi.org/simple flashinfer-python
 
 ## Model Checkpoints
 
-SURE-Map is designed for VGGT-style geometric foundation models. We provide the trained SURE-Map cross-view geometric uncertainty checkpoint used in the reported experiments:
+SURE-Map is designed for VGGT-style geometric foundation models. The trained SURE-Map cross-view geometric uncertainty checkpoint used in the reported experiments is available on [Hugging Face](https://huggingface.co/milchstrasse/SURE-Map). From the repository root, download it to `checkpoints/uncertainty.pt`:
 
-```text
-checkpoints/uncertainty.pt
+```bash
+mkdir -p checkpoints
+wget -O checkpoints/uncertainty.pt \
+  https://huggingface.co/milchstrasse/SURE-Map/resolve/main/uncertainty.pt
 ```
 
-To reproduce the experiments reported in this paper, download the backbone checkpoint:
+This file contains the uncertainty head only. To reproduce the experiments reported in this paper, also download the backbone checkpoint:
 
 ```bash
 wget -O checkpoints/lingbot.pt \
@@ -109,7 +112,7 @@ The resulting checkpoint is saved to:
 training/outputs/flow_sigma_tartanair/ckpts/tartanair_forward_step20000.pt
 ```
 
-The included `checkpoints/uncertainty.pt` is the checkpoint used for the reported experiments. Additional checkpoints trained on broader datasets and more diverse temporal strides will be released in future updates.
+The pretrained checkpoint downloaded to `checkpoints/uncertainty.pt` is the checkpoint used for the reported experiments. Additional checkpoints trained on broader datasets and more diverse temporal strides will be released in future updates.
 
 ## Evaluation Datasets
 
@@ -313,7 +316,7 @@ summary.json
 
 ```bibtex
 @misc{liu2026suremapselfcorrectingstreaminggeometric,
-  title         = {SURE-Map: Self-Correcting Streaming Geometric Foundation Model},
+  title         = {SURE-Map: Self-Correcting Streaming Geometric Foundation Models},
   author        = {Mingkai Liu and Hao Zhao and Xingxing Zuo},
   year          = {2026},
   eprint        = {2609.15795},
